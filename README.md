@@ -164,7 +164,7 @@ The campaign **did not deliver positive ROI** on AOV uplift.
 
 ---
 
-**Prepared by**: [Your Name]  
+**Prepared by**: [Mir Shahadut Hossain]  
 **Date**: December 27, 2025  
 
 **Ready to drive FoodExpress to the next level with data!** 💪🍔📈
