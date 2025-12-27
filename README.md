@@ -156,6 +156,87 @@ The campaign **did not deliver positive ROI** on AOV uplift.
 
 ---
 
+# FoodExpress September 2024 Analytics 📊
+
+## Key Findings Summary
+
+═══════════════════════════════════════════════════════
+
+### 1. Delivery Performance 🚚
+- Delivery times are **highly consistent** across all four city zones (no significant differences, **p = 0.49**).
+- **North Zone** stands out as the most predictable (lowest variability).
+- Typical delivery time is **~37 minutes**, but extreme outliers (likely data errors) inflate averages.
+
+**Key Takeaway**: Excellent operational uniformity — a major competitive strength.
+
+### 2. Customer Segments & Ratings ⭐
+- Orders are well-balanced:
+  - **VIP**: 36.5%
+  - **Regular**: 32.5%
+  - **New**: 31.0%
+- VIP and Regular customers rate the service almost identically (no significant difference, **p = 0.24**).
+
+**Key Takeaway**: Service consistency is strong, but the **VIP program isn't creating a clear "premium" satisfaction boost**.
+
+### 3. Cuisine Popularity 🍕
+- **Indian** dominates at **24%**, closely followed by:
+  - Fast Food (20%)
+  - Italian (20%)
+  - Mexican (19%)
+  - Chinese (17%)
+- Distribution is close to uniform (no significant deviation, **p = 0.06**).
+
+**Key Takeaway**: Indian leads slightly, but all major cuisines enjoy healthy popularity and variety.
+
+### 4. Payment Preferences 💳
+- Preferences are **similar across all customer segments**: Card and UPI lead, followed by Cash and Wallet.
+- No significant association between customer segment and payment method (**p = 0.45**).
+
+**Key Takeaway**: Payment behavior is uniform → broad campaigns and offers will reach all users effectively.
+
+### 5. Factors Affecting Ratings & Revenue 📈
+- **Weak correlations** overall: delivery time, order value, and discounts have minimal impact on customer or restaurant ratings.
+- **Loyalty** (repeat orders) shows the strongest (though still moderate) link to higher restaurant ratings.
+
+**Key Takeaway**: Ratings are driven more by **food quality and consistency** than by speed or price.
+
+### 6. Campaign Effectiveness 🎯
+- The recent promotional campaign showed **no significant impact** on average order value (slight -13% change, **p = 0.38**).
+
+**Key Takeaway**: The current promo structure **did not increase spending per order**.
+
+## Overall Business Implications
+
+FoodExpress has achieved **rare operational consistency** across zones, customer segments, and days of the week. This reliability is a **powerful foundation** and a true differentiator in the competitive food delivery space.
+
+While speed matters, it is **not the primary driver** of customer satisfaction — food quality and restaurant consistency play a bigger role.
+
+The **VIP program** and recent promotions need refinement to deliver clearer, measurable value.
+
+## Top Priorities Moving Forward
+
+1. **Leverage consistency in marketing**  
+   → Position FoodExpress as the "Most Reliable Delivery Everywhere"
+
+2. **Strengthen VIP perks**  
+   → Introduce benefits that create real perceived premium value and higher satisfaction
+
+3. **Focus partnerships on restaurants loved by loyal customers**  
+   → Prioritize high-rated, repeat-order restaurants to boost overall ratings
+
+4. **Clean data outliers and optimize operations**  
+   → Further reduce variability and aim for uniform speed improvements
+
+5. **Test new promotion types**  
+   → Design campaigns that explicitly boost **order value** (e.g., bundling, upselling) rather than just volume
+
+**Conclusion**:  
+FoodExpress is in a **strong position** — small, targeted improvements on top of this solid foundation can drive **significant profitability and growth**.
+
+---
+**Analysis completed: December 27, 2025**  
+**Data period: September 2024**
+
 #### Technical Stack
 
 - **Language**: Python 3
