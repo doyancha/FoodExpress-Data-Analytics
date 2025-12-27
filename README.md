@@ -1,4 +1,4 @@
-# Food# FoodExpress Data Analytics Assignment 📊🚀
+#FoodExpress Data Analytics Assignment
 
 **Case Study**: FoodExpress – A fast-growing food delivery platform optimizing operations through data-driven insights.
 
