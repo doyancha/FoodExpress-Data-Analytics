@@ -100,3 +100,71 @@ for value in df['OrderValue']:
     total_revenue += value
 
 print(f"Total Revenue: ${total_revenue:,.2f}")Express-Data-Analytics
+
+### Advanced Analysis: Promotional Campaign Impact 📈
+
+**Objective**:  
+Measure if a Week 2 promotional campaign **sustainably increased Average Order Value (AOV)** in Week 3 compared to Week 1.
+
+**Methodology**:
+- Matched restaurants active in **both Week 1 (Before)** and **Week 3 (After)**
+- Computed **per-restaurant Average Order Value (AOV)** for each period
+- Applied **paired t-test** for statistical rigor
+
+#### Paired t-test Results
+
+| Metric                     | Value                          |
+|----------------------------|--------------------------------|
+| **Sample Size**            | Matched restaurants across periods |
+| **Average Change**         | **-13.3%**                     |
+| **p-value**                | Not significant (≥ 0.05)       |
+| **Conclusion**             | **No statistically significant impact on AOV** |
+
+#### Visualization
+
+![Campaign Impact: Average Order Value Before vs After](Campaign%20Impact:%20Average%20Order%20Value%20Before%20vs%20After.png)
+
+*Paired scatter plot with 45° reference line — most points near or below the line indicate neutral or negative shift.*
+
+#### ROI Calculation
+
+| Metric                        | Value             |
+|-------------------------------|-------------------|
+| Estimated Revenue Lift        | **-$7,228.79**    |
+| Percentage Lift               | **-13.3%**        |
+| Statistical Significance      | No                |
+
+**Verdict**:  
+The campaign **did not deliver positive ROI** on AOV uplift.
+
+#### Strategic Business Recommendations
+
+| Scenario Outcome                  | Recommendation                                                                                   | Priority  |
+|-----------------------------------|--------------------------------------------------------------------------------------------------|-----------|
+| **No Significant AOV Change**     | Do not repeat identical promo mechanics                                                          | High      |
+|                                   | Extend observation window (4–6 weeks post-campaign)                                               | High      |
+|                                   | Shift focus to **order volume** drivers (e.g., free delivery thresholds)                         | High      |
+|                                   | Test alternative incentives: bundling, limited-time menus, loyalty points                       | Medium    |
+|                                   | Segment analysis: Did promo attract lower-AOV customers?                                          | Medium    |
+| **Future Campaign Best Practices**| Always implement **pre/post paired analysis** on same entities                                   | Critical  |
+|                                   | Track both **AOV** and **order frequency**                                                       | Critical  |
+|                                   | Prioritize **profitable growth** over raw revenue spikes                                         | Critical  |
+
+**Biggest Opportunity Identified**:  
+**Premium Deliveries** – Only **49** identified, but they combine **high delivery fees** with **fast service (<25 min)**.  
+**Actionable Insight**: Scaling this segment through dedicated partner routing, priority dispatch, and targeted marketing could **significantly boost margins**.
+
+---
+
+#### Technical Stack
+
+- **Language**: Python 3
+- **Libraries**: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy.stats`, `statsmodels`
+- **Techniques**: Loops, functions, conditional logic, statistical testing, data visualization
+
+---
+
+**Prepared by**: [Your Name]  
+**Date**: December 27, 2025  
+
+**Ready to drive FoodExpress to the next level with data!** 💪🍔📈
