@@ -231,7 +231,7 @@ The **VIP program** and recent promotions need refinement to deliver clearer, me
    → Design campaigns that explicitly boost **order value** (e.g., bundling, upselling) rather than just volume
 
 **Conclusion**:  
-FoodExpress is in a **strong position** — small, targeted improvements on top of this solid foundation can drive **significant profitability and growth**.
+FoodExpress is in a **strong position**, small, targeted improvements on top of this solid foundation can drive **significant profitability and growth**.
 
 ---
 **Analysis completed: December 27, 2025**  
