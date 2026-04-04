@@ -1,99 +1,87 @@
-# 🍔 FoodExpress Data Analytics
+<div align="center">
 
-> End-to-end exploratory data analysis and statistical inference on one month of food delivery operations — covering data cleaning, feature engineering, visualization, and hypothesis testing.
+# 🍔 FoodExpress · Data Analytics
 
-<br>
+**Give your stakeholders the food delivery insights they need.**  
+Clean, analyze, test, and visualize one month of FoodExpress platform data — end to end.
 
-## 📋 Table of Contents
+[![Python](https://img.shields.io/badge/Python-3.13-3776ab?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-f37626?style=flat-square&logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![pandas](https://img.shields.io/badge/pandas-2.x-150458?style=flat-square&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![scipy](https://img.shields.io/badge/scipy-stats-8caae6?style=flat-square&logo=scipy&logoColor=white)](https://scipy.org/)
+[![License](https://img.shields.io/badge/License-MIT-06d6a0?style=flat-square)](./LICENSE)
+[![Status](https://img.shields.io/badge/Status-Complete-3776ab?style=flat-square)]()
 
-- [Project Overview](#-project-overview)
-- [Dataset](#-dataset)
-- [Project Structure](#-project-structure)
-- [Tech Stack](#-tech-stack)
-- [Installation & Setup](#-installation--setup)
-- [Key Analyses](#-key-analyses)
-  - [1. Data Cleaning](#1-data-cleaning)
-  - [2. Python Fundamentals](#2-python-fundamentals)
-  - [3. Feature Engineering](#3-feature-engineering)
-  - [4. Visualizations](#4-visualizations)
-  - [5. Statistical Tests](#5-statistical-tests)
-  - [6. Business Intelligence](#6-business-intelligence)
-- [Key Findings](#-key-findings)
-- [Recommendations](#-recommendations)
-- [License](#-license)
+[Overview](#-overview) •
+[Dataset](#-dataset) •
+[Project Structure](#-project-structure) •
+[Setup](#-setup) •
+[Key Analyses](#-key-analyses) •
+[Findings](#-key-findings) •
+[Author](#-author) •
+[Contributing](#-contributing)
 
-<br>
+</div>
 
 ---
 
-## 📌 Project Overview
+## 📌 Overview
 
-**FoodExpress** is a rapidly growing food delivery platform connecting customers with local restaurants and delivery partners across multiple city zones. This project performs a comprehensive analysis of **1,000 orders** from September 2024 to surface operational insights, test business hypotheses, and guide data-driven decisions.
+This project performs a comprehensive **exploratory data analysis (EDA)** and **statistical inference** study on one month of delivery operations for the FoodExpress platform — a rapidly growing food delivery service connecting customers with local restaurants across four city zones.
 
-| Scope | Detail |
+The analysis pipeline covers:
+
+- ✅ **Data cleaning** — null imputation, sentinel correction, type fixing, outlier removal, and reshaping
+- ✅ **Python fundamentals** — revenue loops, classifiers, and cuisine-level aggregation functions
+- ✅ **Feature engineering** — net revenue after discounts and platform commission
+- ✅ **Visualizations** — 6 charts covering orders, revenue, payments, and delivery performance
+- ✅ **Hypothesis testing** — 4 formal statistical tests at α = 0.05
+- ✅ **Business intelligence** — correlation analysis and promotional campaign A/B evaluation
+
+| Metric | Value |
 |---|---|
-| Period | September 2024 (1 month) |
+| Period | September 2024 |
 | Raw orders | 1,000 |
 | Clean records | 990 |
 | Total revenue | $35,575.93 |
-| Columns | 24 |
+| Net platform revenue | $25,013.29 |
 | City zones | North · South · East · West |
-
-<br>
 
 ---
 
 ## 📂 Dataset
 
-The dataset `foodexpress_data_uncleaned.csv` contains **24 columns** spanning five categories:
+The dataset `foodexpress_data_uncleaned.csv` contains **24 columns** across six categories:
 
 | Category | Columns |
 |---|---|
 | **Order details** | `OrderID`, `OrderDate`, `OrderTime`, `DayOfWeek`, `TimePeriod` |
-| **Customer info** | `CustomerSegment` (New / Regular / VIP), `City` |
+| **Customer info** | `CustomerSegment` *(New / Regular / VIP)*, `City` |
 | **Restaurant** | `RestaurantID`, `CuisineType`, `RestaurantRating` |
 | **Delivery metrics** | `DeliveryTime`, `DeliveryDistance`, `DeliveryFee`, `WeatherCondition` |
 | **Financials** | `OrderValue`, `DiscountAmount`, `PromoDiscount`, `TipAmount`, `CashPayment`, `CardPayment`, `WalletPayment`, `UPIPayment` |
 | **Performance** | `CustomerRating`, `DeliveryPartnerRating` |
 
-> ⚠️ **Note:** The raw file contains missing values, sentinel errors (`99999`), and invalid strings (`"INVALID"`, `"N/A"`). All issues are resolved in the cleaning pipeline documented below.
-
-<br>
+> ⚠️ **Raw data quality issues:** 294 missing values across 4 columns, sentinel error `99999` in `DeliveryTime`, and `"INVALID"` / `"N/A"` strings in `CustomerRating`. All resolved in the cleaning pipeline.
 
 ---
 
-## 📁 Project Structure
+## 🗂 Project Structure
 
 ```
 FoodExpress-Data-Analytics/
 │
 ├── FoodExpress Data Analytics Project.ipynb   # Main analysis notebook
 ├── foodexpress_data_uncleaned.csv             # Raw dataset
-└── README.md                                  # This file
+├── README.md                                  # This file
+└── assets/                                    # Charts and exported figures
 ```
 
-<br>
-
 ---
 
-## 🛠 Tech Stack
+## ⚙️ Setup
 
-| Library | Purpose |
-|---|---|
-| `pandas` | Data loading, cleaning, groupby, melt, feature engineering |
-| `numpy` | Numerical operations, median imputation |
-| `scipy` | t-tests, chi-square tests, winsorization |
-| `matplotlib` | Base plotting |
-| `seaborn` | Heatmaps, box plots, regression plots, facet grids |
-| `statsmodels` | Tukey HSD post-hoc tests |
-
-**Python version:** 3.13
-
-<br>
-
----
-
-## ⚙️ Installation & Setup
+**Requirements:** Python 3.10+, Jupyter Notebook
 
 ```bash
 # 1. Clone the repository
@@ -101,33 +89,33 @@ git clone https://github.com/doyancha/FoodExpress-Data-Analytics.git
 cd FoodExpress-Data-Analytics
 
 # 2. Install dependencies
-pip install pandas numpy scipy matplotlib seaborn statsmodels
+pip install pandas numpy scipy matplotlib seaborn statsmodels jupyterlab
 
 # 3. Launch the notebook
 jupyter notebook "FoodExpress Data Analytics Project.ipynb"
 ```
 
-<br>
+> The dataset `foodexpress_data_uncleaned.csv` must sit in the same directory as the notebook. All cleaning steps are self-contained within the notebook cells.
 
 ---
 
 ## 🔍 Key Analyses
 
-### 1. Data Cleaning
+### 1 · Data Cleaning — Six-Step Pipeline
 
-The raw dataset contained **294 missing values** across 4 columns. A 6-step pipeline was applied:
+The raw CSV required six discrete cleaning operations before analysis:
 
-| Step | Action | Result |
+| Step | Action | Outcome |
 |---|---|---|
-| 1 | Impute `CustomerRating`, `RestaurantRating`, `DeliveryTime`, `TipAmount` with column median | 294 nulls resolved |
-| 2 | Replace sentinel value `99999` in `DeliveryTime` with median | Outlier corrected |
-| 3 | Clean `"INVALID"` / `"N/A"` strings in `CustomerRating` → NaN → median fill | dtype fixed to `float64` |
-| 4 | Convert `OrderDate` to `datetime64`; all financial columns to `float64` | Types corrected |
-| 5 | Remove rows where `DeliveryTime > 99th percentile` OR `OrderValue < $5` | 10 rows dropped → **990 rows** |
-| 6 | Reshape 4 payment columns from wide → long format using `melt()` | 1 row per payment |
+| 1 | Impute `CustomerRating` (79), `RestaurantRating` (75), `DeliveryTime` (70), `TipAmount` (70) with column median | 294 nulls resolved |
+| 2 | Replace sentinel value `99999` in `DeliveryTime` with median of valid values | Outlier corrected |
+| 3 | Replace `"INVALID"` / `"N/A"` strings in `CustomerRating` → NaN → median fill | `dtype` fixed to `float64` |
+| 4 | Convert `OrderDate` → `datetime64`; financial & rating columns → `float64` | Types corrected |
+| 5 | Drop rows where `DeliveryTime > P99` or `OrderValue < $5` | 10 rows removed → **990 rows** |
+| 6 | Reshape 4 wide payment columns → `PaymentMethod` + `PaymentAmount` using `melt()` | 1 payment per row |
 
 ```python
-# Example: Reshape payment data (wide → long)
+# Step 6 — Reshape payments from wide → long format
 payment_cols = ['CashPayment', 'CardPayment', 'WalletPayment', 'UPIPayment']
 
 df_payment = df_clean.melt(
@@ -137,28 +125,26 @@ df_payment = df_clean.melt(
     value_name='PaymentAmount'
 )
 df_payment = df_payment[df_payment['PaymentAmount'] > 0].copy()
-# Result: 990 orders → 990 real payments (1:1 mapping)
+# Result → 990 orders : 990 payments (1:1 mapping)
 ```
-
-<br>
 
 ---
 
-### 2. Python Fundamentals
+### 2 · Python Fundamentals
 
-#### Total Revenue — For Loop
+#### Revenue Calculation — For Loop
 
 ```python
 total_revenue = 0.0
 for value in df['OrderValue']:
     total_revenue += value
 
-# Output: Total Revenue: $35,575.93
+# → Total Revenue: $35,575.93
 ```
 
 #### Premium Delivery Classifier
 
-A delivery is **"Premium"** when `DeliveryFee > $5.00` AND `DeliveryTime < 25 minutes`.
+A delivery is **"Premium"** when `DeliveryFee > $5.00` **and** `DeliveryTime < 25 minutes`.
 
 ```python
 def is_premium_delivery(order_id):
@@ -167,7 +153,7 @@ def is_premium_delivery(order_id):
         return False
     return (row['DeliveryFee'].iloc[0] > 5.00) and (row['DeliveryTime'].iloc[0] < 25)
 
-# Result: 49 premium deliveries identified
+# Vectorized scan → 49 premium deliveries found
 ```
 
 #### Average Order Value by Cuisine
@@ -180,17 +166,15 @@ def avg_order_value_by_cuisine(cuisine_type):
     return {'cuisine': cuisine_type, 'avg': subset.mean(), 'count': len(subset)}
 ```
 
-<br>
-
 ---
 
-### 3. Feature Engineering — Net Revenue
-
-A new `NetRevenue` column was engineered to capture true platform revenue after discounts and the 20% restaurant commission:
+### 3 · Feature Engineering — Net Revenue
 
 ```
 NetRevenue = OrderValue − DiscountAmount − PromoDiscount − (OrderValue × 0.20)
 ```
+
+A 20% platform commission is applied to every order. The `NetRevenue` column reflects true platform earnings after all deductions.
 
 ```python
 COMMISSION_RATE = 0.20
@@ -205,149 +189,144 @@ df_payment['NetRevenue'] = (
 
 **Net revenue by city zone:**
 
-| Rank | City Zone | Net Revenue |
+| Rank | Zone | Net Revenue |
 |---|---|---|
 | 🥇 | North Zone | $6,631.72 |
 | 🥈 | West Zone | $6,374.00 |
 | 🥉 | South Zone | $6,060.36 |
-| 4 | East Zone | $5,947.21 |
-
-<br>
+| 4th | East Zone | $5,947.21 |
 
 ---
 
-### 4. Visualizations
+### 4 · Visualizations
 
-Six charts were produced to surface patterns in orders, revenue, and delivery performance:
+Six charts were produced using `matplotlib` and `seaborn`:
 
 | Chart | Type | Key Insight |
 |---|---|---|
-| Orders by cuisine | Bar chart | Indian leads with 152 orders |
-| Revenue by cuisine × city | Heatmap | Identifies top cuisine-city combos |
-| Payment method by segment | 100% stacked bar | Uniform spread across segments |
-| Daily order trend | Line plot | Temporal patterns over September |
-| Delivery time distribution | Box plot | Heavy right-skew; outliers in North Zone |
-| Campaign impact | Paired scatter | Before vs After AOV per restaurant |
+| Orders by cuisine | Horizontal bar | Indian leads with 152 orders |
+| Revenue by cuisine × city | Heatmap | Surface top cuisine-city revenue combinations |
+| Payment method by segment | 100% stacked bar | Uniform spread — no segment preference |
+| Daily order trend | Line plot | Temporal patterns across September |
+| Delivery time by city | Box plot | North Zone has heavy right-skew |
+| Campaign AOV impact | Paired scatter | Before vs After AOV per restaurant |
 
 ```python
-# Heatmap: cuisine × city net revenue
+# Heatmap — cuisine × city net revenue
 pivot = df_payment.pivot_table(
     values='NetRevenue', index='CuisineType', columns='City', aggfunc='sum'
 )
 sns.heatmap(pivot, annot=True, fmt='.0f', cmap='YlOrRd', linewidths=0.5)
 
-# Stacked bar: payment method preference by customer segment
-pct = pd.crosstab(df_clean['CustomerSegment'], df_clean['PaymentMethod'],
-                  normalize='index') * 100
-pct.plot(kind='bar', stacked=True)
+# 100% Stacked bar — payment method by customer segment
+pct = pd.crosstab(
+    df_clean['CustomerSegment'], df_clean['PaymentMethod'], normalize='index'
+) * 100
+pct.plot(kind='bar', stacked=True,
+         color=['#e74c3c', '#3498db', '#2ecc71', '#f1c40f'], edgecolor='black')
 ```
-
-<br>
 
 ---
 
-### 5. Statistical Tests
-
-All tests conducted at significance level **α = 0.05**.
+### 5 · Statistical Tests — α = 0.05
 
 #### Test 1 — Independent Samples t-test: VIP vs Regular Ratings
 
 ```
-H₀: Mean rating of VIP customers = Mean rating of Regular customers
-H₁: The means are different
+H₀ : μ(VIP ratings) = μ(Regular ratings)
+H₁ : The means differ
 ```
 
 ```python
 from scipy import stats
-vip_ratings     = df[df['CustomerSegment'] == 'VIP Customer']['CustomerRating']
-regular_ratings = df[df['CustomerSegment'] == 'Regular Customer']['CustomerRating']
-t_stat, p_value = stats.ttest_ind(vip_ratings, regular_ratings)
+
+vip_r     = df[df['CustomerSegment'] == 'VIP Customer']['CustomerRating']
+regular_r = df[df['CustomerSegment'] == 'Regular Customer']['CustomerRating']
+t_stat, p_value = stats.ttest_ind(vip_r, regular_r)
 ```
 
 **Result:** `p ≥ 0.05` → **Fail to reject H₀**
-> No significant difference in satisfaction between VIP and Regular customers. Operations are consistent across segments.
+> No significant difference in satisfaction between VIP and Regular customers. The platform delivers a consistent experience across tiers.
 
 ---
 
 #### Test 2 — One-Sample t-test: North Zone Delivery Target
 
 ```
-H₀: Mean delivery time in North Zone = 30 minutes
-H₁: Mean delivery time ≠ 30 minutes
+H₀ : μ(North Zone delivery time) = 30 minutes
+H₁ : μ ≠ 30 minutes
 ```
 
 ```python
-north_delivery = df[df['City'] == 'North Zone']['DeliveryTime'].dropna()
-t_stat, p_value = stats.ttest_1samp(north_delivery, popmean=30.0)
+north = df[df['City'] == 'North Zone']['DeliveryTime'].dropna()
+t_stat, p_value = stats.ttest_1samp(north, popmean=30.0)
+# Observed mean: 125 min  |  Only 36.7% of orders delivered within 30 min
 ```
 
-**Result:** Observed mean = **125 min** · Only **36.7%** of orders delivered within 30 min → **Reject H₀**
-> North Zone significantly misses its 30-minute delivery target. Operational intervention needed.
+**Result:** `p < 0.05` → **Reject H₀**
+> North Zone significantly misses its 30-minute target. Operational intervention is required.
 
 ---
 
-#### Test 3 — Chi-Square Test of Association: Payment Method vs Customer Segment
+#### Test 3 — Chi-Square Test of Association: Payment Method vs Segment
 
 ```
-H₀: Payment method choice is independent of customer segment
-H₁: There is a significant association
+H₀ : Payment method choice is independent of customer segment
+H₁ : There is a significant association
 ```
 
 **Result:** `p ≥ 0.05` → **Fail to reject H₀**
-> Payment preferences are similar across all customer segments. A uniform payment promotion strategy is appropriate.
+> Payment habits are uniform across all customer segments. A single payment promotion strategy is sufficient.
 
 ---
 
 #### Test 4 — Chi-Square Goodness of Fit: Cuisine Distribution
 
 ```
-H₀: Orders are equally distributed across 5 cuisines (20% each)
-H₁: Distribution is not uniform
+H₀ : Each of 5 cuisines accounts for exactly 20% of orders
+H₁ : Distribution is not uniform
 ```
 
 ```python
 from scipy.stats import chisquare
+
 observed = df_clean[df_clean['CuisineType'].isin(
-    ['Italian','Chinese','Indian','Fast Food','Mexican']
+    ['Italian', 'Chinese', 'Indian', 'Fast Food', 'Mexican']
 )]['CuisineType'].value_counts()
+
 chi2, p_value = chisquare(observed)
-# χ² = 9.11,  p = 0.0585
+# χ² = 9.11  |  p = 0.0585
 ```
 
-**Result:** `p = 0.0585` → **Fail to reject H₀** (marginal)
-> Indian cuisine leads (152 orders) but the distribution is not significantly unequal at α = 0.05.
-
-<br>
+**Result:** `p = 0.0585` → **Fail to reject H₀** *(marginal)*
+> Indian cuisine leads at 152 orders, but no statistically significant imbalance detected at α = 0.05.
 
 ---
 
-### 6. Business Intelligence
+### 6 · Business Intelligence
 
 #### Correlation Analysis — Drivers of Customer Rating
-
-Four factors were tested for correlation with `CustomerRating`:
-
-| Factor | Direction | Strength | Insight |
-|---|---|---|---|
-| `DeliveryPartnerRating` | Positive | Strong | Biggest driver of customer satisfaction |
-| `RestaurantRating` | Positive | Weak | Food quality matters but is secondary |
-| `DeliveryDistance` | Negative | Weak | Longer distance → lower satisfaction |
-| `OrderValue` | ~Zero | None | Spend level does not predict satisfaction |
 
 ```python
 factors = ['DeliveryDistance', 'OrderValue', 'RestaurantRating', 'DeliveryPartnerRating']
 correlations = {f: df['CustomerRating'].corr(df[f]) for f in factors}
 
-# Visualize with 2x2 regression scatter grid
 fig, axes = plt.subplots(2, 2, figsize=(14, 10))
 for idx, factor in enumerate(factors):
     sns.regplot(data=df, x=factor, y='CustomerRating',
                 ax=axes.ravel()[idx], line_kws={'color': 'red'})
 ```
 
+| Factor | Direction | Strength |
+|---|---|---|
+| `DeliveryPartnerRating` | Positive | **Strong** — biggest satisfaction driver |
+| `RestaurantRating` | Positive | Weak — food quality is secondary |
+| `DeliveryDistance` | Negative | Weak — longer distance → lower satisfaction |
+| `OrderValue` | ~Zero | None — spend level doesn't predict satisfaction |
+
 #### Promotional Campaign — Paired t-test
 
-Average order value (AOV) per restaurant was compared **before (Week 1)** and **after (Week 3)** a promotional campaign using a paired t-test.
+Average order value (AOV) per restaurant was compared **before (Week 1)** and **after (Week 3)** a promotional campaign.
 
 ```python
 before = df_campaign[df_campaign['Period'] == 'Before (Week 1)'] \
@@ -355,52 +334,89 @@ before = df_campaign[df_campaign['Period'] == 'Before (Week 1)'] \
 after  = df_campaign[df_campaign['Period'] == 'After (Week 3)'] \
              .groupby('RestaurantID')['OrderValue'].mean()
 
-paired = pd.concat([before, after], axis=1, join='inner')
+paired  = pd.concat([before, after], axis=1, join='inner')
 t_stat, p_value = stats.ttest_rel(paired.iloc[:, 0], paired.iloc[:, 1])
+# AOV change: −13.3%  |  Revenue lift: −$7,228.79  |  p ≥ 0.05
 ```
 
-| Metric | Value |
-|---|---|
-| AOV change | −13.3% |
-| Revenue lift | −$7,228.79 |
-| p-value | ≥ 0.05 |
-| Verdict | No significant change |
-
-<br>
+**Result:** `p ≥ 0.05` → No statistically significant change in AOV from the campaign.
 
 ---
 
 ## 💡 Key Findings
 
-- **North Zone** generates the highest net revenue (**$6,631.72**) but has the worst delivery performance — only 36.7% of orders meet the 30-minute target.
-- **Delivery partner quality** is the strongest predictor of customer satisfaction, not food quality or order value.
-- **Indian cuisine** is the most ordered (152 orders), though cuisine demand is not significantly unequal across the five major types.
-- **VIP and Regular customers** give statistically equivalent ratings — the platform delivers a consistent experience across segments.
-- **Payment preferences** are uniform across customer segments — no segment shows a strong affinity for any one payment method.
-- The **promotional campaign** showed no statistically significant impact on average order value.
-
-<br>
+- 🏙️ **North Zone** generates the highest net revenue ($6,631.72) but misses the 30-minute delivery target — only 36.7% of orders arrive on time.
+- 🚴 **Delivery partner rating** is the single strongest predictor of customer satisfaction, outweighing food quality and spend level.
+- ⭐ **VIP and Regular customers** give statistically equivalent ratings — operations are fair and consistent across segments.
+- 💳 **Payment preferences** are uniform across all customer segments — no targeted payment strategy is needed.
+- 🍛 **Indian cuisine** leads in volume (152 orders), though no cuisine is statistically over- or under-represented.
+- 📉 The **promotional campaign** had no statistically significant effect on average order value.
 
 ---
 
 ## 📣 Recommendations
 
-1. **Fix North Zone delivery operations** — invest in route optimization, partner allocation, or zone-specific SLAs to push the ≤30-min delivery rate above 70%.
-2. **Prioritize delivery partner quality** — since partner rating is the top driver of customer satisfaction, implement tiered partner incentives tied to rating performance.
-3. **Redesign the promo campaign** — flat discounts did not move AOV. Test bundling, free delivery thresholds, or limited-time cuisine-specific offers instead.
-4. **Use volume-based campaigns** — since AOV is unresponsive to promos, shift marketing goals to order frequency and new customer acquisition.
-5. **Always run pre/post paired tests** — formalize A/B measurement for every future campaign before committing budget.
+1. **Fix North Zone delivery** — invest in route optimization or zone-specific partner allocation to push ≤30-min delivery rate above 70%.
+2. **Prioritize partner quality** — since partner rating drives satisfaction above all else, implement tiered incentives tied to delivery rating performance.
+3. **Redesign the promo mechanics** — flat discounts did not move AOV; test free delivery thresholds, bundling, or cuisine-specific limited-time offers.
+4. **Shift to volume campaigns** — since AOV is unresponsive to promos, redirect marketing toward order frequency and new customer acquisition.
+5. **Formalize A/B measurement** — every future campaign should have a pre/post paired t-test built in before budget is committed.
 
-<br>
+---
+
+## 🛠 Tech Stack
+
+| Library | Version | Purpose |
+|---|---|---|
+| `pandas` | 2.x | Data loading, cleaning, groupby, melt, feature engineering |
+| `numpy` | 1.x | Numerical operations, median imputation |
+| `scipy` | 1.x | t-tests, chi-square tests, winsorization |
+| `matplotlib` | 3.x | Base plotting engine |
+| `seaborn` | 0.13+ | Heatmaps, box plots, regression plots, facet grids |
+| `statsmodels` | 0.14+ | Tukey HSD post-hoc tests |
+
+---
+
+## 👤 Author
+
+<div align="center">
+
+**Doyancha**
+
+[![GitHub](https://img.shields.io/badge/GitHub-doyancha-1a1a2e?style=flat-square&logo=github)](https://github.com/doyancha)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/doyancha/)
+
+*Data analyst focused on operations analytics, statistical inference, and Python-based data pipelines.*
+
+</div>
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+1. Fork the repository
+2. Create a feature branch — `git checkout -b feature/your-idea`
+3. Commit your changes — `git commit -m "Add: your idea"`
+4. Push to the branch — `git push origin feature/your-idea`
+5. Open a Pull Request
+
+Please open an **issue** first to discuss any significant change.
 
 ---
 
 ## 📄 License
 
-This project is for educational and analytical purposes.
+This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for details.
 
 ---
 
 <div align="center">
-  <sub>Built with Python · pandas · scipy · seaborn · statsmodels</sub>
+
+[![GitHub](https://img.shields.io/badge/GitHub-FoodExpress--Data--Analytics-1a1a2e?style=flat-square&logo=github)](https://github.com/doyancha/FoodExpress-Data-Analytics)
+[![Python](https://img.shields.io/badge/Built%20with-Python-3776ab?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+
+*Made with 🍔 and data*
+
 </div>
