@@ -384,7 +384,7 @@ t_stat, p_value = stats.ttest_rel(paired.iloc[:, 0], paired.iloc[:, 1])
 **Doyancha**
 
 [![GitHub](https://img.shields.io/badge/GitHub-doyancha-1a1a2e?style=flat-square&logo=github)](https://github.com/doyancha)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mir-shahadut-hossain/))
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mir-shahadut-hossain/)
 
 *Data analyst focused on operations analytics, statistical inference, and Python-based data pipelines.*
 
