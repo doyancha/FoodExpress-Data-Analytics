@@ -31,12 +31,25 @@ This project performs a comprehensive **exploratory data analysis (EDA)** and **
 
 The analysis pipeline covers:
 
-- ✅ **Data cleaning** — null imputation, sentinel correction, type fixing, outlier removal, and reshaping
-- ✅ **Python fundamentals** — revenue loops, classifiers, and cuisine-level aggregation functions
-- ✅ **Feature engineering** — net revenue after discounts and platform commission
-- ✅ **Visualizations** — 6 charts covering orders, revenue, payments, and delivery performance
-- ✅ **Hypothesis testing** — 4 formal statistical tests at α = 0.05
-- ✅ **Business intelligence** — correlation analysis and promotional campaign A/B evaluation
+- ✅ **Data cleaning** — null imputation, sentinel correction, datatype standardization, outlier removal, and data reshaping
+- ✅ **Feature engineering** — net revenue calculation, discount aggregation, and derived temporal features (day, week, segment)
+- ✅ **Exploratory analysis (EDA)** — order distribution, customer segmentation, cuisine trends, and delivery performance patterns
+- ✅ **Statistical testing** — hypothesis testing including t-tests and chi-square tests to validate operational and customer insights
+- ✅ **Business insights** — identification of key drivers of customer satisfaction, revenue performance, and operational efficiency
+- ✅ **Interactive dashboard (Streamlit)** — real-time filtering, KPI monitoring, and visualization of operational and revenue metrics
+
+## 📊 Dashboard Preview
+
+### 🖥️ Main Dashboard
+<!-- Add your dashboard screenshot here -->
+
+### 📈 KPI & Metrics View
+<!-- Add KPI screenshot here -->
+
+### 📉 Analytical Charts
+<!-- Add charts screenshot here -->
+
+---
 
 | Metric | Value |
 |---|---|
@@ -71,11 +84,12 @@ The dataset `foodexpress_data_uncleaned.csv` contains **24 columns** across six 
 ```
 FoodExpress-Data-Analytics/
 │
-├── FoodExpress Data Analytics Project.ipynb   # Main analysis notebook
-├── foodexpress_data_uncleaned.csv             # Raw dataset
-├── README.md                                  # This file
-└── assets/                                    # Charts and exported figures
-```
+├── app.py # Streamlit dashboard
+├── FoodExpress Data Analytics Project.ipynb # Analysis notebook
+├── foodexpress_data_uncleaned.csv # Raw dataset
+├── requirements.txt # Dependencies
+├── assets/ # Images & visuals
+├── README.md # Documentation
 
 ---
 
