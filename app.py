@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+import plotly.io as pio
 from pathlib import Path
 
 # =========================================================
@@ -531,6 +532,9 @@ st.markdown("""
 # HELPERS
 # =========================================================
 DATA_FILE = "foodexpress_data_uncleaned.csv"
+CHART_TEMPLATE = "plotly_dark"
+
+pio.templates.default = CHART_TEMPLATE
 
 
 @st.cache_data
@@ -684,11 +688,32 @@ def insight_card(title: str, text: str):
 
 def wrap_chart(fig, title: str = None):
     fig.update_layout(
-        template="plotly_white",
+        template=CHART_TEMPLATE,
         height=430,
         margin=dict(l=20, r=20, t=60, b=20),
         legend_title_text="",
-        title_x=0.02
+        title_x=0.02,
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(9, 17, 31, 0.78)",
+        font=dict(color="#dbeafe"),
+        title_font=dict(size=20, color="#f8fbff"),
+        legend=dict(
+            bgcolor="rgba(0,0,0,0)",
+            borderwidth=0,
+            font=dict(color="#cbd5e1")
+        )
+    )
+    fig.update_xaxes(
+        showgrid=False,
+        linecolor="rgba(148, 163, 184, 0.22)",
+        tickfont=dict(color="#9fb3d1"),
+        title_font=dict(color="#dbeafe")
+    )
+    fig.update_yaxes(
+        gridcolor="rgba(148, 163, 184, 0.16)",
+        zerolinecolor="rgba(148, 163, 184, 0.12)",
+        tickfont=dict(color="#9fb3d1"),
+        title_font=dict(color="#dbeafe")
     )
     if title:
         fig.update_layout(title=title)
@@ -699,7 +724,7 @@ def wrap_chart(fig, title: str = None):
 # LOAD DATA
 # =========================================================
 st.markdown("""
-<div class="hero-box" style="display:flex; flex-direction:column; align-items:center; text-align:center;">
+<div class="hero-box" style="display:flex; flex-direction:column; align-items:center; text-align:center; width:100%;">
     <div class="hero-topline">⚡ Live Operational Intelligence</div>
     <div class="hero-title">🍔 FoodExpress Analytics</div>
     <div class="hero-subtitle">
@@ -1292,11 +1317,3 @@ with tab4:
 
     st.dataframe(preview_df, use_container_width=True, height=360)
 
-# =========================================================
-# FOOTER
-# =========================================================
-st.markdown("""
-<div class="footer-box">
-    FoodExpress Analytics · Engineered for operational clarity and executive decision-making.
-</div>
-""", unsafe_allow_html=True)
