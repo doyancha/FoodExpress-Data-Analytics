@@ -1,0 +1,19 @@
+# Core Data Processing
+pandas==2.2.2
+numpy==1.26.4
+
+# Data Visualization
+matplotlib==3.8.4
+seaborn==0.13.2
+plotly==5.22.0
+
+# Statistical Analysis
+scipy==1.13.1
+statsmodels==0.14.2
+
+# Jupyter Environment
+notebook==7.2.0
+ipykernel==6.29.4
+
+# Utility
+openpyxl==3.1.2
