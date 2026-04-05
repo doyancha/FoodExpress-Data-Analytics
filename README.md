@@ -55,6 +55,16 @@ The analysis pipeline covers:
 <img width="2552" height="1219" alt="Screenshot 2026-04-05 165133" src="https://github.com/user-attachments/assets/436eb5c0-4c05-47c0-ad95-db313aa6c47b" />
 <img width="2557" height="1226" alt="Screenshot 2026-04-05 165105" src="https://github.com/user-attachments/assets/22119c68-5dc8-43d3-8f9b-5c61a77921e5" />
 
+<p align="center">
+  <img width="45%" src="https://github.com/user-attachments/assets/76b2888e-722b-4df0-8bb0-43b4fe17bd19" alt="Dashboard Overview" />
+  <img width="45%" src="https://github.com/user-attachments/assets/436eb5c0-4c05-47c0-ad95-db313aa6c47b" alt="Operations Tab" />
+</p>
+<p align="center">
+  <img width="45%" src="https://github.com/user-attachments/assets/22119c68-5dc8-43d3-8f9b-5c61a77921e5" alt="Customer Insights" />
+  <img width="45%" src="https://github.com/user-attachments/assets/1a80194e-7981-45af-89c7-07d99896c1a8" alt="Revenue & Data" />
+</p>
+
+
 ---
 
 
