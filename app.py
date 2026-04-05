@@ -402,7 +402,54 @@ st.markdown("""
         border-radius: 12px;
         border: 1px solid rgba(148,163,184,0.12);
     }
-            
+
+    .cred-card {
+        background:
+            radial-gradient(circle at top right, rgba(45,212,191,0.10), transparent 38%),
+            linear-gradient(180deg, rgba(18, 26, 44, 0.98) 0%, rgba(11, 18, 32, 0.98) 100%);
+        border: 1px solid rgba(96,165,250,0.18);
+        border-radius: 18px;
+        padding: 16px 14px 14px 14px;
+        margin-top: 14px;
+        box-shadow: 0 16px 28px rgba(2, 6, 23, 0.28);
+    }
+
+    .cred-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: #7dd3fc !important;
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+
+    .cred-name {
+        font-size: 15px;
+        font-weight: 800;
+        color: #f8fafc !important;
+        margin-bottom: 4px;
+    }
+
+    .cred-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        color: #cbd5e1 !important;
+        text-decoration: none;
+        padding: 8px 10px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.06);
+        margin-bottom: 8px;
+    }
+
+    .cred-link:hover {
+        background: rgba(255,255,255,0.08);
+        border-color: rgba(96,165,250,0.22);
+        color: #ffffff !important;
+    }
+             
     .stTabs [aria-selected="true"] {
         background: linear-gradient(135deg, rgba(59, 130, 246, 0.24), rgba(139, 92, 246, 0.22)) !important;
         color: #f8fbff !important;
@@ -742,6 +789,22 @@ st.sidebar.markdown(
     """,
     unsafe_allow_html=True
 )
+
+st.sidebar.markdown("""
+<div class="cred-card">
+    <div class="cred-label">Contact</div>
+    <div class="cred-name">Mir Shahadut Hossain</div>
+    <a class="cred-link" href="https://www.linkedin.com/in/mir-shahadut-hossain/" target="_blank">
+        <span>LinkedIn</span>
+    </a>
+    <a class="cred-link" href="https://github.com/doyancha" target="_blank">
+        <span>GitHub</span>
+    </a>
+    <a class="cred-link" href="mailto:sujon6901@gmail.com">
+        <span>sujon6901@gmail.com</span>
+    </a>
+</div>
+""", unsafe_allow_html=True)
 
 
 if filtered_df.empty:
