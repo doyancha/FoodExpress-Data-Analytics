@@ -41,8 +41,9 @@ The analysis pipeline covers:
 ## 📊 Dashboard Preview
 
 
+
 ### 🖥️ Main Dashboard
-<img width="2560" height="1440" alt="Screenshot 2026-04-05 164830" src="https://github.com/user-attachments/assets/68cc05c6-637c-4ce3-b85e-8ef42c4687ba" />
+<img width="2558" height="1232" alt="Screenshot 2026-04-05 165641" src="https://github.com/user-attachments/assets/8b38f57e-7b4a-422a-9051-e27e7dc7b598" />
 
 ### 📈 KPI & Metrics View
 <!-- Add KPI screenshot here -->
