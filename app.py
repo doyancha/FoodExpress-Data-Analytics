@@ -60,17 +60,16 @@ st.markdown("""
         position: relative;
         overflow: hidden;
         background:
-            radial-gradient(circle at top right, rgba(34, 211, 238, 0.24), transparent 26%),
-            radial-gradient(circle at left center, rgba(139, 92, 246, 0.2), transparent 20%),
-            linear-gradient(135deg, rgba(13, 25, 46, 0.98) 0%, rgba(9, 19, 34, 0.94) 52%, rgba(8, 16, 28, 0.94) 100%);
-        padding: 42px 40px;
-        border-radius: 28px;
+            radial-gradient(circle at right 18%, rgba(34, 211, 238, 0.16), transparent 18%),
+            linear-gradient(180deg, rgba(25, 57, 94, 0.98) 0%, rgba(22, 49, 83, 0.96) 100%);
+        padding: 44px 42px;
+        border-radius: 22px;
         color: white;
         margin-bottom: 22px;
         width: 100%;
         display: block;
-        border: 1px solid rgba(96, 165, 250, 0.22);
-        box-shadow: 0 24px 64px rgba(2, 6, 23, 0.48);
+        border: 1px solid rgba(103, 176, 255, 0.18);
+        box-shadow: 0 18px 42px rgba(2, 6, 23, 0.36);
         text-align: center;
     }
 
@@ -78,18 +77,19 @@ st.markdown("""
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(90deg, rgba(59, 130, 246, 0.18), rgba(139, 92, 246, 0.12), rgba(34, 211, 238, 0.18));
-        opacity: 0.8;
+        border-top: 2px solid rgba(79, 172, 255, 0.6);
+        opacity: 0.95;
         pointer-events: none;
     }
 
     .hero-box::after {
         content: "";
         position: absolute;
-        inset: 14px;
+        inset: 0;
         border-radius: 22px;
-        border: 1px solid rgba(191, 219, 254, 0.08);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.04),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.03);
         pointer-events: none;
     }
 
@@ -105,33 +105,33 @@ st.markdown("""
         align-items: center;
         justify-content: center;
         gap: 8px;
-        padding: 8px 16px;
+        padding: 0;
         margin-bottom: 14px;
-        border-radius: 999px;
-        background: rgba(11, 22, 40, 0.62);
-        border: 1px solid rgba(96, 165, 250, 0.2);
-        color: #b8d6ff;
-        font-size: 11px;
+        border-radius: 0;
+        background: transparent;
+        border: 0;
+        color: #8ac7ff;
+        font-size: 10px;
         font-weight: 700;
         letter-spacing: 0.24em;
         text-transform: uppercase;
-        box-shadow: 0 0 22px rgba(59, 130, 246, 0.14);
+        box-shadow: none;
     }
 
     .hero-title {
-        font-size: 42px;
+        font-size: 40px;
         font-weight: 800;
-        margin-bottom: 12px;
+        margin-bottom: 14px;
         letter-spacing: 0.01em;
-        line-height: 1.08;
-        text-shadow: 0 0 30px rgba(96, 165, 250, 0.34);
+        line-height: 1.12;
+        text-shadow: 0 0 24px rgba(191, 219, 254, 0.32);
     }
 
     .hero-subtitle {
-        font-size: 15px;
-        color: #cfe0ff;
+        font-size: 14px;
+        color: #d8e6f8;
         line-height: 1.8;
-        max-width: 840px;
+        max-width: 760px;
         margin: 0 auto;
     }
 
