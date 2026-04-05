@@ -368,6 +368,33 @@ st.markdown("""
         box-shadow: 0 3px 10px rgba(14,165,136,0.35);
     }
 
+    div[data-testid="stSidebar"] div[data-testid="stButton"] > button {
+        min-height: 42px;
+        border-radius: 14px;
+        border: 1px solid rgba(148,163,184,0.16);
+        background: linear-gradient(180deg, rgba(20, 29, 48, 0.98) 0%, rgba(13, 21, 36, 0.96) 100%);
+        color: #cbd5e1;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        box-shadow: 0 8px 18px rgba(2, 6, 23, 0.24);
+        transition: all 0.18s ease;
+    }
+
+    div[data-testid="stSidebar"] div[data-testid="stButton"] > button:hover {
+        border-color: rgba(96, 165, 250, 0.34);
+        color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: 0 12px 24px rgba(2, 6, 23, 0.34), 0 0 18px rgba(34, 211, 238, 0.10);
+    }
+
+    div[data-testid="stSidebar"] div[data-testid="stButton"] > button[kind="primary"] {
+        background: linear-gradient(135deg, rgba(14,165,136,0.92) 0%, rgba(37,99,235,0.9) 100%);
+        border-color: rgba(110, 231, 223, 0.36);
+        color: #ffffff;
+        box-shadow: 0 14px 28px rgba(14,165,136,0.22), 0 0 18px rgba(96,165,250,0.18);
+    }
+
     /* ── SIDEBAR FOOTER ── */
     .sidebar-row-count {
         background: rgba(255,255,255,0.05);
@@ -446,18 +473,50 @@ st.markdown("""
             
     /* ── CREDENTIALS CARD ── */
     .cred-card {
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 18px;
-        padding: 16px 16px 14px 16px;
-        margin-top: 14px;
+        background:
+            radial-gradient(circle at top right, rgba(45,212,191,0.12), transparent 38%),
+            linear-gradient(180deg, rgba(18, 26, 44, 0.96) 0%, rgba(11, 18, 32, 0.98) 100%);
+        border: 1px solid rgba(96,165,250,0.18);
+        border-radius: 22px;
+        padding: 18px 16px 16px 16px;
+        margin-top: 16px;
+        box-shadow: 0 18px 36px rgba(2, 6, 23, 0.34);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cred-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto auto 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #22d3ee, #60a5fa, #8b5cf6);
+        opacity: 0.95;
+    }
+
+    .sidebar-brand ~ div .cred-card {
+        display: none;
+    }
+
+    .about-card + .cred-card {
+        display: block;
+    }
+
+    .cred-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: #7dd3fc !important;
+        font-weight: 800;
+        margin-bottom: 10px;
     }
 
     .cred-name {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 800;
         color: #f1f5f9 !important;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
     }
 
     .cred-role {
@@ -476,15 +535,16 @@ st.markdown("""
         font-size: 12px;
         color: #94a3b8 !important;
         text-decoration: none;
-        padding: 7px 10px;
-        border-radius: 8px;
+        padding: 9px 11px;
+        border-radius: 12px;
         background: rgba(255,255,255,0.04);
         border: 1px solid rgba(255,255,255,0.06);
-        margin-bottom: 6px;
+        margin-bottom: 8px;
     }
 
     .cred-link:hover {
         background: rgba(255,255,255,0.08);
+        border-color: rgba(96,165,250,0.22);
         color: #f1f5f9 !important;
     }
 
@@ -830,7 +890,27 @@ if 'City' in filtered_df.columns:
 
 if 'CuisineType' in filtered_df.columns:
     cuisine_options = sorted([x for x in filtered_df['CuisineType'].dropna().unique() if x != 'nan'])
-    selected_cuisines = st.sidebar.multiselect("Select Cuisine Type", cuisine_options, default=cuisine_options)
+
+    if 'selected_cuisines' not in st.session_state:
+        st.session_state.selected_cuisines = set(cuisine_options)
+
+    st.sidebar.markdown('<div class="sidebar-filter-label">🍽️ Select Cuisine Type</div>', unsafe_allow_html=True)
+
+    cuisine_cols = st.sidebar.columns(2)
+    for i, cuisine in enumerate(cuisine_options):
+        col = cuisine_cols[i % 2]
+        is_active = cuisine in st.session_state.selected_cuisines
+        label = f"{'✓ ' if is_active else ''}{cuisine}"
+        btn_type = "primary" if is_active else "secondary"
+        if col.button(label, key=f"cuisine_{cuisine}", use_container_width=True, type=btn_type):
+            if cuisine in st.session_state.selected_cuisines:
+                if len(st.session_state.selected_cuisines) > 1:
+                    st.session_state.selected_cuisines.discard(cuisine)
+            else:
+                st.session_state.selected_cuisines.add(cuisine)
+            st.rerun()
+
+    selected_cuisines = list(st.session_state.selected_cuisines)
     if selected_cuisines:
         filtered_df = filtered_df[filtered_df['CuisineType'].isin(selected_cuisines)]
 
@@ -875,6 +955,7 @@ st.sidebar.markdown(
 # ── CREDENTIALS ──
 st.sidebar.markdown("""
 <div class="cred-card">
+    <div class="cred-label">Contact</div>
     <div class="cred-name">Mir Shahadut Hossain</div>
     <div class="cred-role">Data Analyst</div>
     <a class="cred-link" href="https://www.linkedin.com/in/mir-sahadut-hossain" target="_blank">
@@ -899,6 +980,21 @@ st.sidebar.markdown("""
     <span class="about-pill">Streamlit</span>
     <span class="about-pill">Plotly</span>
     <span class="about-pill">Pandas</span>
+</div>
+
+<div class="cred-card">
+    <div class="cred-label">Contact</div>
+    <div class="cred-name">Mir Shahadut Hossain</div>
+    <div class="cred-role">Data Analyst</div>
+    <a class="cred-link" href="https://www.linkedin.com/in/mir-sahadut-hossain" target="_blank">
+        <span>LinkedIn</span>
+    </a>
+    <a class="cred-link" href="https://github.com/doyancha" target="_blank">
+        <span>GitHub</span>
+    </a>
+    <a class="cred-link" href="mailto:sujon6901@gmail.com">
+        <span>Email</span>
+    </a>
 </div>
 """, unsafe_allow_html=True)
 
