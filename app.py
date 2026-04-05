@@ -241,6 +241,81 @@ st.markdown("""
         border-right: 1px solid rgba(96, 165, 250, 0.14);
     }
 
+    div[data-testid="stSidebar"] * {
+        color: #e5eefc !important;
+    }
+
+    .sidebar-brand {
+        background:
+            radial-gradient(circle at top right, rgba(45,212,191,0.12), transparent 34%),
+            linear-gradient(180deg, rgba(35, 72, 89, 0.96) 0%, rgba(26, 49, 76, 0.98) 100%);
+        border: 1px solid rgba(96,165,250,0.16);
+        border-radius: 20px;
+        padding: 18px 16px 16px 16px;
+        margin-bottom: 16px;
+        box-shadow: 0 20px 36px rgba(2, 6, 23, 0.32);
+    }
+
+    .sidebar-brand-logo {
+        font-size: 28px;
+        line-height: 1;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .sidebar-brand-title {
+        font-size: 15px;
+        font-weight: 800;
+        color: #f8fafc !important;
+        margin-bottom: 6px;
+    }
+
+    .sidebar-brand-tag {
+        display: inline-block;
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #78f0d9 !important;
+        background: rgba(45,212,191,0.12);
+        border: 1px solid rgba(45,212,191,0.18);
+        padding: 3px 8px;
+        border-radius: 999px;
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+
+    .sidebar-brand-subtitle {
+        font-size: 11px;
+        line-height: 1.65;
+        color: #c3d6ee !important;
+    }
+
+    .sidebar-filter-title {
+        font-size: 13px;
+        font-weight: 800;
+        color: #f8fafc !important;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-top: 4px;
+        margin-bottom: 2px;
+    }
+
+    .sidebar-filter-subtitle {
+        font-size: 11px;
+        color: #7f93b2 !important;
+        margin-bottom: 10px;
+    }
+
+    .sidebar-filter-label {
+        font-size: 11px;
+        font-weight: 800;
+        color: #93a4be !important;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-bottom: 8px;
+        margin-top: 14px;
+    }
+
     .toggle-btn.active {
         background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
         border-color: #14b8a6;
@@ -249,30 +324,30 @@ st.markdown("""
     }
 
     div[data-testid="stSidebar"] div[data-testid="stButton"] > button {
-        min-height: 42px;
-        border-radius: 14px;
-        border: 1px solid rgba(148,163,184,0.16);
-        background: linear-gradient(180deg, rgba(20, 29, 48, 0.98) 0%, rgba(13, 21, 36, 0.96) 100%);
-        color: #cbd5e1;
+        min-height: 40px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.06);
+        background: #0a0f18;
+        color: #cbd5e1 !important;
         font-weight: 700;
         font-size: 12px;
         letter-spacing: 0.02em;
-        box-shadow: 0 8px 18px rgba(2, 6, 23, 0.24);
+        box-shadow: none;
         transition: all 0.18s ease;
     }
 
     div[data-testid="stSidebar"] div[data-testid="stButton"] > button:hover {
-        border-color: rgba(96, 165, 250, 0.34);
-        color: #ffffff;
+        border-color: rgba(255,255,255,0.1);
+        color: #ffffff !important;
         transform: translateY(-1px);
-        box-shadow: 0 12px 24px rgba(2, 6, 23, 0.34), 0 0 18px rgba(34, 211, 238, 0.10);
+        box-shadow: 0 10px 18px rgba(2, 6, 23, 0.22);
     }
 
     div[data-testid="stSidebar"] div[data-testid="stButton"] > button[kind="primary"] {
-        background: linear-gradient(135deg, rgba(14,165,136,0.92) 0%, rgba(37,99,235,0.9) 100%);
-        border-color: rgba(110, 231, 223, 0.36);
-        color: #ffffff;
-        box-shadow: 0 14px 28px rgba(14,165,136,0.22), 0 0 18px rgba(96,165,250,0.18);
+        background: linear-gradient(180deg, #ff6668 0%, #ff4f57 100%);
+        border-color: rgba(255, 133, 140, 0.4);
+        color: #ffffff !important;
+        box-shadow: 0 10px 20px rgba(255, 79, 87, 0.26);
     }
 
     div[data-testid="stSidebar"] [data-baseweb="select"] > div,
@@ -328,94 +403,6 @@ st.markdown("""
         border: 1px solid rgba(148,163,184,0.12);
     }
             
-    /* ── CREDENTIALS CARD ── */
-    .cred-card {
-        background:
-            radial-gradient(circle at top right, rgba(45,212,191,0.12), transparent 38%),
-            linear-gradient(180deg, rgba(18, 26, 44, 0.96) 0%, rgba(11, 18, 32, 0.98) 100%);
-        border: 1px solid rgba(96,165,250,0.18);
-        border-radius: 22px;
-        padding: 18px 16px 16px 16px;
-        margin-top: 16px;
-        box-shadow: 0 18px 36px rgba(2, 6, 23, 0.34);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .cred-card::before {
-        content: "";
-        position: absolute;
-        inset: 0 auto auto 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(90deg, #22d3ee, #60a5fa, #8b5cf6);
-        opacity: 0.95;
-    }
-
-    .sidebar-brand ~ div .cred-card {
-        display: none;
-    }
-
-    .about-card + .cred-card {
-        display: block;
-    }
-
-    .cred-label {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-        color: #7dd3fc !important;
-        font-weight: 800;
-        margin-bottom: 10px;
-    }
-
-    .cred-name {
-        font-size: 16px;
-        font-weight: 800;
-        color: #f1f5f9 !important;
-        margin-bottom: 4px;
-    }
-
-    .cred-role {
-        font-size: 11px;
-        color: #2dd4bf !important;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 12px;
-    }
-
-    .cred-link {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 12px;
-        color: #94a3b8 !important;
-        text-decoration: none;
-        padding: 9px 11px;
-        border-radius: 12px;
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.06);
-        margin-bottom: 8px;
-    }
-
-    .cred-link:hover {
-        background: rgba(255,255,255,0.08);
-        border-color: rgba(96,165,250,0.22);
-        color: #f1f5f9 !important;
-    }
-
-    /* ── ABOUT BLOCK ── */
-    .about-card {
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(255,255,255,0.06);
-        border-radius: 14px;
-        color: var(--text-soft);
-        background: transparent;
-        font-weight: 600;
-        padding: 0 18px;
-    }
-
     .stTabs [aria-selected="true"] {
         background: linear-gradient(135deg, rgba(59, 130, 246, 0.24), rgba(139, 92, 246, 0.22)) !important;
         color: #f8fbff !important;
@@ -631,7 +618,21 @@ df = clean_data(raw_df)
 # =========================================================
 # SIDEBAR FILTERS
 # =========================================================
-st.sidebar.markdown("## 📊 Dashboard Filters")
+st.sidebar.markdown("""
+<div class="sidebar-brand">
+    <span class="sidebar-brand-logo">🍔</span>
+    <div class="sidebar-brand-title">FoodExpress BI</div>
+    <div class="sidebar-brand-tag">Analytics Dashboard</div>
+    <div class="sidebar-brand-subtitle">
+        Decision-focused interface for operational efficiency, customer dynamics, and commercial performance.
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+st.sidebar.markdown("""
+<div class="sidebar-filter-title">📊 Dashboard Filters</div>
+<div class="sidebar-filter-subtitle">Adjust the scope of analysis</div>
+""", unsafe_allow_html=True)
 
 filtered_df = df.copy()
 
@@ -655,7 +656,27 @@ if 'OrderDate' in filtered_df.columns and filtered_df['OrderDate'].notna().any()
 
 if 'City' in filtered_df.columns:
     city_options = sorted([x for x in filtered_df['City'].dropna().unique() if x != 'nan'])
-    selected_cities = st.sidebar.multiselect("Select City", city_options, default=city_options)
+
+    if 'selected_cities' not in st.session_state:
+        st.session_state.selected_cities = set(city_options)
+
+    st.sidebar.markdown('<div class="sidebar-filter-label">🏙️ Select City</div>', unsafe_allow_html=True)
+
+    city_cols = st.sidebar.columns(2)
+    for i, city in enumerate(city_options):
+        col = city_cols[i % 2]
+        is_active = city in st.session_state.selected_cities
+        label = f"{'✓ ' if is_active else ''}{city}"
+        btn_type = "primary" if is_active else "secondary"
+        if col.button(label, key=f"city_{city}", use_container_width=True, type=btn_type):
+            if city in st.session_state.selected_cities:
+                if len(st.session_state.selected_cities) > 1:
+                    st.session_state.selected_cities.discard(city)
+            else:
+                st.session_state.selected_cities.add(city)
+            st.rerun()
+
+    selected_cities = list(st.session_state.selected_cities)
     if selected_cities:
         filtered_df = filtered_df[filtered_df['City'].isin(selected_cities)]
 
@@ -687,7 +708,27 @@ if 'CuisineType' in filtered_df.columns:
 
 if 'CustomerSegment' in filtered_df.columns:
     segment_options = sorted([x for x in filtered_df['CustomerSegment'].dropna().unique() if x != 'nan'])
-    selected_segments = st.sidebar.multiselect("Select Customer Segment", segment_options, default=segment_options)
+
+    if 'selected_segments' not in st.session_state:
+        st.session_state.selected_segments = set(segment_options)
+
+    st.sidebar.markdown('<div class="sidebar-filter-label">👥 Customer Segment</div>', unsafe_allow_html=True)
+
+    seg_icons = {"New Customer": "🔷", "Regular Customer": "🔷", "VIP Customer": "⭐"}
+    for seg in segment_options:
+        is_active = seg in st.session_state.selected_segments
+        icon = seg_icons.get(seg, "•")
+        label = f"{icon} {'✓ ' if is_active else ''}{seg}"
+        btn_type = "primary" if is_active else "secondary"
+        if st.sidebar.button(label, key=f"seg_{seg}", use_container_width=True, type=btn_type):
+            if seg in st.session_state.selected_segments:
+                if len(st.session_state.selected_segments) > 1:
+                    st.session_state.selected_segments.discard(seg)
+            else:
+                st.session_state.selected_segments.add(seg)
+            st.rerun()
+
+    selected_segments = list(st.session_state.selected_segments)
     if selected_segments:
         filtered_df = filtered_df[filtered_df['CustomerSegment'].isin(selected_segments)]
 
@@ -701,52 +742,6 @@ st.sidebar.markdown(
     """,
     unsafe_allow_html=True
 )
-
-# ── CREDENTIALS ──
-st.sidebar.markdown("""
-<div class="cred-card">
-    <div class="cred-label">Contact</div>
-    <div class="cred-name">Mir Shahadut Hossain</div>
-    <div class="cred-role">Data Analyst</div>
-    <a class="cred-link" href="https://www.linkedin.com/in/mir-sahadut-hossain" target="_blank">
-        <span>🔗</span> LinkedIn Profile
-    </a>
-    <a class="cred-link" href="https://github.com/doyancha" target="_blank">
-        <span>🐙</span> github.com/doyancha
-    </a>
-    <a class="cred-link" href="mailto:sujon6901@gmail.com">
-        <span>✉️</span> sujon6901@gmail.com
-    </a>
-</div>
-
-<div class="about-card">
-    <div class="about-label">About This Project</div>
-    <div class="about-text">
-        Real-world food delivery dataset covering 4 city zones across September 2024.
-        Demonstrates end-to-end analytics from data cleaning and EDA to an interactive
-        executive-grade BI dashboard.
-    </div>
-    <span class="about-pill">Python</span>
-    <span class="about-pill">Streamlit</span>
-    <span class="about-pill">Plotly</span>
-    <span class="about-pill">Pandas</span>
-</div>
-
-<div class="cred-card">
-    <div class="cred-label">Contact</div>
-    <div class="cred-name">Mir Shahadut Hossain</div>
-    <div class="cred-role">Data Analyst</div>
-    <a class="cred-link" href="https://www.linkedin.com/in/mir-sahadut-hossain" target="_blank">
-        <span>LinkedIn</span>
-    </a>
-    <a class="cred-link" href="https://github.com/doyancha" target="_blank">
-        <span>GitHub</span>
-    </a>
-    <a class="cred-link" href="mailto:sujon6901@gmail.com">
-        <span>Email</span>
-    </a>
-</div>
-""", unsafe_allow_html=True)
 
 
 if filtered_df.empty:
