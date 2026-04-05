@@ -292,6 +292,7 @@ vip_r     = df[df['CustomerSegment'] == 'VIP Customer']['CustomerRating']
 regular_r = df[df['CustomerSegment'] == 'Regular Customer']['CustomerRating']
 t_stat, p_value = stats.ttest_ind(vip_r, regular_r)
 ```
+<img width="1089" height="790" alt="customers_ratings_vip_vs_regular_customers" src="https://github.com/user-attachments/assets/7f8519aa-7565-4fa1-a4fd-11649e429a47" />
 
 **Result:** `p ≥ 0.05` → **Fail to reject H₀**
 > No significant difference in satisfaction between VIP and Regular customers. The platform delivers a consistent experience across tiers.
@@ -310,6 +311,7 @@ north = df[df['City'] == 'North Zone']['DeliveryTime'].dropna()
 t_stat, p_value = stats.ttest_1samp(north, popmean=30.0)
 # Observed mean: 125 min  |  Only 36.7% of orders delivered within 30 min
 ```
+<img width="1189" height="789" alt="delivery_time_distribution_by_city" src="https://github.com/user-attachments/assets/38dbca40-8cb1-461c-9e51-9bdd76d3ddef" />
 
 **Result:** `p < 0.05` → **Reject H₀**
 > North Zone significantly misses its 30-minute target. Operational intervention is required.
@@ -345,6 +347,7 @@ observed = df_clean[df_clean['CuisineType'].isin(
 chi2, p_value = chisquare(observed)
 # χ² = 9.11  |  p = 0.0585
 ```
+<img width="644" height="470" alt="payment_method_by_customer_segment" src="https://github.com/user-attachments/assets/6012bab4-83d3-4c64-8066-7c81b33201dc" />
 
 **Result:** `p = 0.0585` → **Fail to reject H₀** *(marginal)*
 > Indian cuisine leads at 152 orders, but no statistically significant imbalance detected at α = 0.05.
@@ -386,6 +389,7 @@ paired  = pd.concat([before, after], axis=1, join='inner')
 t_stat, p_value = stats.ttest_rel(paired.iloc[:, 0], paired.iloc[:, 1])
 # AOV change: −13.3%  |  Revenue lift: −$7,228.79  |  p ≥ 0.05
 ```
+<img width="1189" height="690" alt="Cuisine_Distribution_ChiSquare_Visual" src="https://github.com/user-attachments/assets/b12c49dd-1f2a-41fa-b618-377b5df7ab71" />
 
 **Result:** `p ≥ 0.05` → No statistically significant change in AOV from the campaign.
 
