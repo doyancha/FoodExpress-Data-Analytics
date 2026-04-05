@@ -47,7 +47,7 @@ st.markdown("""
     }
 
     .block-container {
-        padding-top: 1.4rem;
+        padding-top: 2.35rem;
         padding-bottom: 2.4rem;
         max-width: 1440px;
     }
@@ -60,16 +60,16 @@ st.markdown("""
         position: relative;
         overflow: hidden;
         background:
-            radial-gradient(circle at right 18%, rgba(34, 211, 238, 0.16), transparent 18%),
-            linear-gradient(180deg, rgba(25, 57, 94, 0.98) 0%, rgba(22, 49, 83, 0.96) 100%);
-        padding: 44px 42px;
+            radial-gradient(circle at right 18%, rgba(34, 211, 238, 0.14), transparent 18%),
+            linear-gradient(180deg, rgba(28, 66, 109, 0.98) 0%, rgba(24, 58, 97, 0.97) 100%);
+        padding: 54px 54px 48px 54px;
         border-radius: 22px;
         color: white;
-        margin-bottom: 22px;
+        margin-bottom: 14px;
         width: 100%;
         display: block;
         border: 1px solid rgba(103, 176, 255, 0.18);
-        box-shadow: 0 18px 42px rgba(2, 6, 23, 0.36);
+        box-shadow: 0 24px 54px rgba(2, 6, 23, 0.38);
         text-align: center;
     }
 
@@ -106,7 +106,7 @@ st.markdown("""
         justify-content: center;
         gap: 8px;
         padding: 0;
-        margin-bottom: 14px;
+        margin-bottom: 18px;
         border-radius: 0;
         background: transparent;
         border: 0;
@@ -119,19 +119,19 @@ st.markdown("""
     }
 
     .hero-title {
-        font-size: 40px;
-        font-weight: 800;
-        margin-bottom: 14px;
-        letter-spacing: 0.01em;
-        line-height: 1.12;
-        text-shadow: 0 0 24px rgba(191, 219, 254, 0.32);
+        font-size: 54px;
+        font-weight: 900;
+        margin-bottom: 18px;
+        letter-spacing: -0.02em;
+        line-height: 1.02;
+        text-shadow: 0 0 28px rgba(191, 219, 254, 0.34);
     }
 
     .hero-subtitle {
-        font-size: 14px;
+        font-size: 15px;
         color: #d8e6f8;
-        line-height: 1.8;
-        max-width: 760px;
+        line-height: 1.75;
+        max-width: 780px;
         margin: 0 auto;
     }
 
@@ -139,8 +139,8 @@ st.markdown("""
         font-size: 22px;
         font-weight: 700;
         color: var(--text-main);
-        margin-top: 12px;
-        margin-bottom: 14px;
+        margin-top: 4px;
+        margin-bottom: 10px;
         letter-spacing: 0.04em;
     }
 
@@ -156,11 +156,15 @@ st.markdown("""
     }
 
     .metric-card {
-        padding: 18px 18px;
-        border-radius: 22px;
-        margin-bottom: 12px;
+        padding: 19px 18px 16px 18px;
+        border-radius: 18px;
+        margin-bottom: 10px;
         position: relative;
         overflow: hidden;
+        background:
+            radial-gradient(circle at top right, rgba(59, 130, 246, 0.10), transparent 32%),
+            linear-gradient(180deg, rgba(13, 25, 44, 0.96) 0%, rgba(10, 18, 32, 0.94) 100%);
+        box-shadow: 0 14px 28px rgba(2, 6, 23, 0.28);
     }
 
     .metric-card::before {
@@ -176,14 +180,14 @@ st.markdown("""
     .metric-label {
         font-size: 12px;
         color: var(--text-soft);
-        margin-bottom: 8px;
+        margin-bottom: 10px;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.18em;
     }
 
     .metric-value {
-        font-size: 30px;
+        font-size: 37px;
         font-weight: 800;
         color: #f8fbff;
         line-height: 1.1;
@@ -191,9 +195,9 @@ st.markdown("""
     }
 
     .metric-delta {
-        font-size: 12px;
+        font-size: 11px;
         color: var(--emerald);
-        margin-top: 7px;
+        margin-top: 8px;
         font-weight: 600;
         letter-spacing: 0.04em;
     }
