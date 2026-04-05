@@ -40,16 +40,22 @@ The analysis pipeline covers:
 
 ## 📊 Dashboard Preview
 
+
 ### 🖥️ Main Dashboard
-<!-- Add your dashboard screenshot here -->
+<img width="2560" height="1440" alt="Screenshot 2026-04-05 164830" src="https://github.com/user-attachments/assets/68cc05c6-637c-4ce3-b85e-8ef42c4687ba" />
 
 ### 📈 KPI & Metrics View
 <!-- Add KPI screenshot here -->
+<img width="2544" height="1220" alt="Screenshot 2026-04-05 164954" src="https://github.com/user-attachments/assets/04ff6ecb-9eac-45b9-b863-ef46a0c04f24" />
 
 ### 📉 Analytical Charts
 <!-- Add charts screenshot here -->
+<img width="2555" height="1239" alt="Screenshot 2026-04-05 165038" src="https://github.com/user-attachments/assets/76b2888e-722b-4df0-8bb0-43b4fe17bd19" />
+<img width="2552" height="1219" alt="Screenshot 2026-04-05 165133" src="https://github.com/user-attachments/assets/436eb5c0-4c05-47c0-ad95-db313aa6c47b" />
+<img width="2557" height="1226" alt="Screenshot 2026-04-05 165105" src="https://github.com/user-attachments/assets/22119c68-5dc8-43d3-8f9b-5c61a77921e5" />
 
 ---
+
 
 | Metric | Value |
 |---|---|
@@ -224,6 +230,8 @@ Six charts were produced using `matplotlib` and `seaborn`:
 | Daily order trend | Line plot | Temporal patterns across September |
 | Delivery time by city | Box plot | North Zone has heavy right-skew |
 | Campaign AOV impact | Paired scatter | Before vs After AOV per restaurant |
+
+
 
 ```python
 # Heatmap — cuisine × city net revenue
