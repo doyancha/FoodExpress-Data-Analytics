@@ -235,8 +235,27 @@ Six charts were produced using `matplotlib` and `seaborn`:
 | Revenue by cuisine × city | Heatmap | Surface top cuisine-city revenue combinations |
 | Payment method by segment | 100% stacked bar | Uniform spread — no segment preference |
 | Daily order trend | Line plot | Temporal patterns across September |
-| Delivery time by city | Box plot | North Zone has heavy right-skew |
+ry time by city | Box plot | North Zone has heavy right-skew |
 | Campaign AOV impact | Paired scatter | Before vs After AOV per restaurant |
+
+<div align="center">
+
+## 📊 Dashboard Visualizations
+
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/0c7c568d-19a0-4280-a008-f09ff758b6cc" width="350"/></td>
+    <td><img src="https://github.com/user-attachments/assets/c2ef6e00-b159-473d-8926-0440005bb978" width="350"/></td>
+    <td><img src="https://github.com/user-attachments/assets/a6f16710-9863-4dab-8c17-5767f9422ede" width="350"/></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/660d183d-a3e1-4109-9e61-efddedfd5213" width="350"/></td>
+    <td><img src="https://github.com/user-attachments/assets/a6d72295-f9bc-4127-9560-5e86e9da3505" width="350"/></td>
+    <td><img src="https://github.com/user-attachments/assets/aa6da66c-35b7-4eb4-b19f-1df79ed4c99a" width="350"/></td>
+  </tr>
+</table>
+
+</div>
 
 
 
